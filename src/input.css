@@ -1,0 +1,244 @@
+@import "tailwindcss";
+:root{
+	--scrollbar-bg:#f3f6f2; /* track */
+	--scrollbar-thumb:#cfe3c8; /* thumb */
+	--scrollbar-thumb-hover:#b3d1ae;
+	--scrollbar-width:12px;
+}
+/* Mencegah scroll horizontal tidak sengaja di seluruh situs */
+body { overflow-x: hidden; }
+/* Untuk browser berbasis WebKit */
+*::-webkit-scrollbar{width:var(--scrollbar-width);height:var(--scrollbar-width)}
+*::-webkit-scrollbar-track{background:var(--scrollbar-bg);border-radius:999px}
+*::-webkit-scrollbar-thumb{background:var(--scrollbar-thumb);border-radius:999px;border:3px solid var(--scrollbar-bg)}
+*::-webkit-scrollbar-thumb:hover{background:var(--scrollbar-thumb-hover)}
+
+/* Untuk Firefox */
+*{scrollbar-width:thin;scrollbar-color:var(--scrollbar-thumb) var(--scrollbar-bg)}
+
+/* Hindari pergeseran tata letak saat scrollbar vertikal muncul */
+html{scrollbar-gutter:stable}
+/* Cadangan untuk browser sangat lama: sediakan area scrollbar tetap */
+html{overflow-y:scroll}
+
+/* Token warna proyek sebagai kelas utilitas (melengkapi utilitas Tailwind) */
+.bg-primary { background-color: #faf1e6; }
+.bg-secondary { background-color: #fdfaf6; }
+.bg-accent { background-color: #E4EFE7; }
+.bg-accent-dark { background-color: #123a45; }
+.bg-footer { background-color: #064420; }
+.text-accent { color: #E4EFE7; }
+.text-secondary { color: #064420; }
+.btn-accent { background-color: #E4EFE7; }
+.lightbox-overlay { background: rgba(0,0,0,0.75); }
+
+/* Lapisan latar untuk efek crossfade */
+.hero-bg-layer {
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+
+@keyframes layerFade {
+	0%  { opacity: 0; transform: scale(1.02) translateY(10px); filter: blur(6px); }
+	6%  { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+	28% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+	34% { opacity: 0; transform: scale(0.98) translateY(-6px); filter: blur(4px); }
+	100%{ opacity: 0; transform: scale(0.98) translateY(-6px); filter: blur(6px); }
+}
+
+@keyframes textCycle {
+	0%  { opacity: 0; transform: translateX(-50%) translateY(22px) scale(0.98); filter: blur(4px); letter-spacing: 0; }
+	6%  { opacity: 1; transform: translateX(-50%) translateY(0) scale(1.01); filter: blur(0); letter-spacing: 0.6px; }
+	26% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); filter: blur(0); letter-spacing: 0.6px; }
+	34% { opacity: 0; transform: translateX(-50%) translateY(-18px) scale(0.98); filter: blur(3px); letter-spacing: 0; }
+	100%{ opacity: 0; transform: translateX(-50%) translateY(-18px) scale(0.98); filter: blur(3px); letter-spacing: 0; }
+}
+
+.hero-bg-1 { animation: layerFade 28s infinite cubic-bezier(.2,.9,.2,1); }
+.hero-bg-2 { animation: layerFade 28s infinite cubic-bezier(.2,.9,.2,1); animation-delay: 9.3s; }
+.hero-bg-3 { animation: layerFade 28s infinite cubic-bezier(.2,.9,.2,1); animation-delay: 18.6s; }
+
+.hero-text {
+	position: absolute;
+	left: 12%;
+	top: 38%;
+	transform: translateX(-28%) translateY(0);
+	opacity: 0;
+	animation-fill-mode: both;
+	width: 60%;
+	animation: textCycle 28s infinite cubic-bezier(.2,.9,.2,1);
+	transform-origin: center;
+	display: block;
+	text-align: left;
+	text-shadow: 0 6px 18px rgba(2,6,23,0.35);
+	backface-visibility: hidden;
+	-webkit-font-smoothing: antialiased;
+	will-change: transform, opacity, filter;
+}
+.hero-break { display: none; }
+@media (min-width: 768px) {
+	.hero-break { display: block; height: 0; line-height: 0; }
+}
+@media (min-width: 768px) {
+	.hero-text { top: 44%; left: 32%; transform: translateX(-32%) translateY(0); width:50%; }
+}
+.hero-text.delay-1 { animation-delay: 9.3s; }
+.hero-text.delay-2 { animation-delay: 18.6s; }
+
+.hero-actions-top {
+	position: absolute;
+	left: 28%;
+	top: calc(38% + 4.5rem);
+	transform: translateX(-28%);
+	display: flex;
+	gap: 0.6rem;
+	z-index: 30;
+	align-items: center;
+	transition: left .22s cubic-bezier(.2,.9,.2,1), top .22s cubic-bezier(.2,.9,.2,1);
+}
+@media (min-width: 768px) {
+	.hero-actions-top { left: 32%; transform: translateX(-32%); top: calc(44% + 4.5rem); }
+}
+
+/* Penataan hero ramah-seluler: pusatkan teks dan tombol aksi pada layar kecil */
+@media (max-width: 767px) {
+		.hero-text {
+			left: 50%;
+			top: 24%;
+			transform: translateX(-50%) translateY(0);
+			width: 90%;
+			/* ubah perataan teks menjadi kiri pada layar kecil */
+			text-align: left;
+			/* responsive font-size for mobile to improve wrapping */
+			font-size: 1.5rem; /* ~24px */
+			line-height: 1.05;
+		}
+
+	.hero-actions-top {
+		left: 50%;
+		transform: translateX(-50%);
+		top: calc(24% + 2.75rem);
+	}
+
+		/* Pastikan hero-break memaksa baris baru saat viewport berubah */
+		.hero-break { display: block; height: 0; line-height: 0; }
+}
+
+/* Layar sangat kecil: perkecil ukuran font hero sedikit agar tidak meluap */
+@media (max-width: 420px) {
+	.hero-text { font-size: 1.25rem; /* ~20px */ }
+	.hero-actions-top { top: calc(24% + 2.4rem); }
+}
+
+.hero-btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.6rem 1rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem; text-decoration: none; box-shadow: 0 6px 18px rgba(2,6,23,0.18); transition: opacity 160ms ease, transform 140ms cubic-bezier(.2,.9,.2,1); }
+.hero-btn:hover{ opacity: 0.92; transform: translateY(-1px); }
+.hero-btn-order { background: #706442; color: #fff; }
+.hero-btn-menu { background: rgba(255,255,255,0.92); color: #333; }
+.hero-cta { display: none; }
+.hero-bg-layer { will-change: opacity; }
+.hero-section { min-height: calc(100vh - 4rem); }
+@media (min-width: 768px) { .hero-section { min-height: calc(100vh - 5rem); } }
+.hero-section::before{ content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 75%; pointer-events: none; z-index: 6; background: linear-gradient(65deg, #334d50 0%, rgba(51,77,80,0.85) 40%, rgba(51,77,80,0.15) 70%, rgba(51,77,80,0) 100%); mix-blend-mode: overlay; opacity: .95; }
+
+#mobile-menu { max-height: 0; overflow: hidden; opacity: 0; transform-origin: top; transform: translateY(-6px) scaleY(0.98); transition: max-height 320ms cubic-bezier(.2,.9,.2,1), opacity 220ms ease, transform 320ms cubic-bezier(.2,.9,.2,1); }
+#mobile-menu.menu-open { max-height: 900px; opacity: 1; transform: translateY(0) scaleY(1); }
+.will-change-transform { will-change: transform; }
+
+/* Pastikan footer berada di bawah pada halaman pendek: buat body menjadi kolom dan biarkan main mengembang. */
+html, body {
+	box-sizing: border-box;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+main {
+	/* allow the main content area to expand and push footer to the bottom */
+	flex: 1 0 auto;
+}
+
+/* Checkout: improved select dropdown UI and preview styling */
+#menuItem {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'><path fill='%23606420' d='M5.25 7.5L10 12.25 14.75 7.5z'/></svg>");
+	background-repeat: no-repeat;
+	background-position: right 0.9rem center;
+	background-size: 1.2rem 1.2rem;
+	padding-right: 2.5rem; /* space for arrow */
+	cursor: pointer;
+	transition: box-shadow 160ms ease, transform 160ms ease;
+}
+#menuItem:focus { box-shadow: 0 6px 18px rgba(2,6,23,0.08); outline: none; transform: translateY(-1px); }
+/* hide default arrow in IE */
+#menuItem::-ms-expand { display: none; }
+
+/* Gaya thumbnail preview */
+.menu-preview-wrapper .w-16 { width: 64px; height: 64px; }
+#menu-preview { transition: transform 220ms cubic-bezier(.2,.9,.2,1), opacity 160ms ease; }
+#menu-preview.fade { opacity: 0.2; transform: scale(0.98); }
+
+#/* Gaya tampilan harga */
+# (Catatan: ini dipakai untuk teks harga di form checkout)
+#*/
+#/*
+#   Namun beberapa tooling tidak mengizinkan multiline koment yang berubah,
+#   jadi gunakan komentar satu baris sederhana di bawah ini untuk konsistensi.
+#*/
+/* Gaya tampilan harga */
+#menu-price { font-size: 1rem; color: #064420; }
+
+#/* Perbesar area sentuh tombol '+' agar lebih nyaman di perangkat sentuh */
+#*/
+#/*
+#   Gunakan padding dan border-radius yang sedikit lebih besar agar mudah
+#   ditekan pada layar kecil.
+#*/
+#add-to-cart { padding: 0.5rem 0.75rem; border-radius: 8px; }
+
+
+/* Buat transisi header lebih halus agar tidak muncul loncatan ketika JS mengubah kelas */
+header {
+	transition: background-color 200ms ease, box-shadow 200ms ease, transform 220ms ease, backdrop-filter 260ms ease;
+	will-change: box-shadow, background-color, transform, backdrop-filter;
+}
+/* Elemen .container di dalam header menyimpan utilitas tinggi (h-16 / md:h-20).
+   Lakukan animasi pada perubahan tinggi dan padding pada elemen ini. */
+header .container {
+	transition: height 200ms cubic-bezier(.2,.9,.2,1), padding 200ms ease, box-shadow 200ms ease, background-color 200ms ease, transform 220ms ease;
+	will-change: height, padding, box-shadow, background-color, transform;
+}
+
+/* Penghalusan khusus mobile: hapus bayangan awal pada .container (banyak halaman menambahkan
+   `shadow-md` di markup) dan terapkan bayangan pada elemen `header` supaya transisi bayangan
+   yang dipicu oleh JavaScript terlihat halus dan konsisten. */
+@media (max-width: 767px) {
+	/* override: nonaktifkan bayangan pada container agar tidak terjadi flicker */
+	header .container { box-shadow: none !important; }
+
+	/* Ketika JS menambahkan kelas `shadow-md` pada header, tampilkan bayangan lembut
+	   dan efek blur yang ringan untuk tampilan modern tanpa loncatan tajam. */
+	header.shadow-md {
+		/* bayangan lembut + sedikit 'angkat' */
+		box-shadow: 0 10px 15px -3px rgba(2,6,23,0.08), 0 4px 6px -2px rgba(2,6,23,0.04);
+		background-color: rgba(255,255,255,0.95);
+		/* sedikit pergeseran vertikal untuk mengurangi kesan loncatan */
+		transform: translateY(-2px);
+		/* efek frosted blur bila didukung browser */
+		-webkit-backdrop-filter: blur(6px);
+		backdrop-filter: blur(6px);
+		border-bottom: 1px solid rgba(2,6,23,0.03);
+	}
+
+	/* Perpanjang sedikit durasi transisi di mobile agar perubahan terasa lebih halus */
+	header { transition: background-color 260ms ease, box-shadow 260ms ease, transform 260ms ease, backdrop-filter 280ms ease; }
+	header .container { transition: height 240ms cubic-bezier(.22,.9,.2,1), padding 220ms ease, transform 220ms ease; }
+}
+

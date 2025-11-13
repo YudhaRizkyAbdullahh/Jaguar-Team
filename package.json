@@ -1,0 +1,17 @@
+{
+  "name": "bubur-ayam-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --minify",
+    "start": "npx http-server -p 8000",
+    "check": "node tools/run_headless_check.js",
+    "postinstall": "npm run build:css"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "jsdom": "^27.2.0",
+    "puppeteer": "^24.29.1",
+    "tailwindcss": "^4.1.17"
+  }
+}

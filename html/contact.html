@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontak — Bubur Ayam Bang Jaka</title>
+  <link rel="stylesheet" href="/src/output.css">
+</head>
+<body class="font-sans bg-white text-gray-800 leading-relaxed">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 bg-white">
+    <div class="container mx-auto px-4 md:px-8 flex items-center shadow-md justify-between h-16 md:h-20">
+      <a href="/html/index.html" class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#faf1e6]">
+          <img src="/images/icon/logo.png" alt="Logo Bubur Ayam Bang Jaka" class="w-7 h-7 object-cover rounded-full">
+        </span>        
+        <span class="font-playfair font-bold text-lg md:text-xl text-gray-900 tracking-tight">Bubur Ayam Bang Jaka</span>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+        <a href="/html/index.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Home</a>
+        <a href="/html/about.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Tentang Kami</a>
+        <a href="/html/menu.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Menu</a>
+        <a href="/html/index.html#galeri" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Galeri</a>
+        <a href="/html/reviews.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Review</a>
+        <a href="/html/contact.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Kontak</a>
+        <a href="/html/checkout.html" class="ml-4 inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#706442] text-white text-xs md:text-sm font-semibold hover:opacity-90 transition">Pesan Sekarang</a>
+      </nav>
+
+      <div class="flex items-center md:hidden gap-3">
+        <a href="/html/menu.html" class="inline-flex items-center relative">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" viewBox="0 0 640 640" aria-hidden="true">
+            <path d="M24 48C10.7 48 0 58.7 0 72C0 85.3 10.7 96 24 96L69.3 96C73.2 96 76.5 98.8 77.2 102.6L129.3 388.9C135.5 423.1 165.3 448 200.1 448L456 448C469.3 448 480 437.3 480 424C480 410.7 469.3 400 456 400L200.1 400C188.5 400 178.6 391.7 176.5 380.3L171.4 352L475 352C505.8 352 532.2 330.1 537.9 299.8L568.9 133.9C572.6 114.2 557.5 96 537.4 96L124.7 96L124.3 94C119.5 67.4 96.3 48 69.2 48L24 48zM208 576C234.5 576 256 554.5 256 528C256 501.5 234.5 480 208 480C181.5 480 160 501.5 160 528C160 554.5 181.5 576 208 576zM432 576C458.5 576 480 554.5 480 528C480 501.5 458.5 480 432 480C405.5 480 384 501.5 384 528C384 554.5 405.5 576 432 576z"/>
+          </svg>
+        </a>
+        <button id="mobile-toggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#faf1e6] text-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e4efe7] focus-visible:ring-offset-2" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="hamburger" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="close-x" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden origin-top transform hidden w-full bg-white border-t border-gray-100 shadow-lg">
+      <div class="px-4 py-4 space-y-1">
+        <a href="/html/index.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Home</a>
+        <a href="/html/about.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Tentang Kami</a>
+        <a href="/html/menu.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Menu</a>
+        <a href="/html/index.html#galeri" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Galeri</a>
+        <a href="/html/reviews.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Review</a>
+        <a href="/html/contact.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Kontak</a>
+        <div class="px-4 py-3">
+          <a href="/html/checkout.html" class="inline-flex items-center justify-center w-full px-4 py-2 rounded-full bg-[#706442] text-white text-sm font-semibold hover:opacity-90">Pesan Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </header>
+    <main class="container mx-auto px-6 lg:px-8 pt-16 md:pt-20 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <!-- Form Kontak -->
+        <section class="bg-white rounded-2xl shadow-md p-6">
+          <h1 class="text-2xl font-semibold mb-3">Hubungi Kami</h1>
+          <p class="text-sm text-gray-600 mb-6">Isi formulir di bawah untuk pertanyaan atau pemesanan. Anda juga dapat langsung menghubungi kami via WhatsApp.</p>
+
+          <form id="contact-form" class="space-y-4" novalidate>
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">Nama</label>
+              <input id="name" name="name" type="text" required class="mt-1 block w-full rounded-xl border border-gray-200 bg-white px-3 py-2 shadow-sm placeholder-gray-400 transition focus:outline-none focus:ring-2 focus:ring-[#e4efe7] focus:border-[#706442]" placeholder="Nama lengkap">
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700">No. HP</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" required class="mt-1 block w-full rounded-xl border border-gray-200 bg-white px-3 py-2 shadow-sm placeholder-gray-400 transition focus:outline-none focus:ring-2 focus:ring-[#e4efe7] focus:border-[#706442]" placeholder="08xxxxxxxxxx">
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Email (opsional)</label>
+              <input id="email" name="email" type="email" class="mt-1 block w-full rounded-xl border border-gray-200 bg-white px-3 py-2 shadow-sm placeholder-gray-400 transition focus:outline-none focus:ring-2 focus:ring-[#e4efe7] focus:border-[#706442]" placeholder="nama@contoh.com">
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700">Pesan / Detail Pesanan</label>
+              <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-xl border border-gray-200 bg-white px-3 py-2 shadow-sm placeholder-gray-400 transition focus:outline-none focus:ring-2 focus:ring-[#e4efe7] focus:border-[#706442]" placeholder="Tulis pesan atau detail pesanan Anda..."></textarea>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <button id="send-wa" type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-gray-800 font-semibold hover:opacity-95 transition disabled:opacity-60" disabled>
+                  <svg id="submit-spinner" class="hidden animate-spin h-4 w-4 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>
+                  <span id="submit-label">Kirim via WhatsApp</span>
+                </button>
+
+              <button id="clear-btn" type="button" class="text-sm text-gray-600 hover:text-gray-800">Bersihkan</button>
+            </div>
+          </form>
+
+          <div id="form-msg" class="mt-4 text-sm text-red-600" aria-live="polite"></div>
+        </section>
+
+        <!-- Detail kontak & peta -->
+        <aside class="space-y-6">
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <h2 class="text-lg font-semibold">Alamat & Kontak</h2>
+            <p class="mt-2 text-sm text-gray-600">Pasar Tamin Jl. Antara, Klp. Tiga, Kec. Tj. Karang Bar., Kota Bandar Lampung, Lampung 35119</p>
+            <p class="mt-1 text-sm">WhatsApp: <a href="https://wa.me/6289692783848" class="text-[#706442] font-medium">+62 896-9278-3848</a></p>
+          </div>
+
+          <div class="bg-white rounded-lg p-0 overflow-hidden shadow-sm">
+            <!-- Peta responsif: mempertahankan rasio aspek asli 600x260 sambil menyesuaikan dengan lebar kontainer -->
+            <div class="relative w-full" style="padding-top:43.333%;"> <!-- 260/600 = 0.43333 => 43.333% -->
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.2236945211257!2d105.2927685778096!3d-5.3828318806625335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40d1529ef333b9%3A0x99afead7212a5d9a!2sBubur%20Ayam%20Mas%20Mul%20-%20Sukarame!5e0!3m2!1sid!2sid!4v1762834328900!5m2!1sid!2sid"
+                class="absolute inset-0 w-full h-full"
+                style="border:0;"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg p-4 shadow-sm text-sm text-gray-600">
+            <p><strong>Jam Operasional</strong></p>
+            <p class="mt-1">Senin - Jumat: 06:00 - 14:00</p>
+            <p>Sabtu - Minggu: 06:30 - 15:00</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 bg-[#064420] text-white px-4 py-2 rounded shadow-lg hidden" role="status" aria-live="polite"></div>
+
+  <script src="/js/header.js"></script>
+  <script src="/js/contact.js"></script>
+  <!-- Footer -->
+  <footer class="bg-[#706442] text-white py-6">
+    <div class="max-w-7xl mx-auto px-10 sm:px-6 lg:px-8 text-center">
+      <p class="text-sm">© <span id="year"></span> Bubur Ayam Bang Jaka. Designed by Jaguar Team.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
