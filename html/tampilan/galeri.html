@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Galeri Foto - Bubur Ayam Bang Jaka</title>
+    <link rel="stylesheet" href="../../src/output.css">
+</head>
+<body class="font-sans bg-white text-gray-800 leading-relaxed overflow-x-hidden">
+
+     <header class="sticky top-0 z-50 bg-white">
+       <div class="w-full px-4 md:px-8 flex items-center shadow-md justify-between h-16 md:h-20">
+             <a href="index.html" class="flex items-center gap-3">
+             <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#faf1e6]">
+               <img src="../../images/icon/logo.png" alt="Logo Bubur Ayam Bang Jaka" class="w-7 h-7 object-cover rounded-full">
+             </span>
+             <span class="font-playfair font-bold text-lg md:text-xl text-gray-900 tracking-tight">Bubur Ayam Bang Jaka</span>
+           </a>
+
+           <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+             <a href="index.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Home</a>
+             <a href="about.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Tentang Kami</a>
+             <a href="menu.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Menu</a>
+             <a href="galeri.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Galeri</a>
+             <a href="reviews.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Review</a>
+             <a href="contact.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Kontak</a>
+             <a href="../checkout.html" class="ml-4 inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#706442] text-white text-xs md:text-sm font-semibold hover:opacity-90 transition">Pesan Sekarang</a>
+           </nav>
+
+           <div class="flex items-center md:hidden gap-3">
+             <a href="menu.html" class="inline-flex items-center relative">
+               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" viewBox="0 0 640 640" aria-hidden="true">
+                 <path d="M24 48C10.7 48 0 58.7 0 72C0 85.3 10.7 96 24 96L69.3 96C73.2 96 76.5 98.8 77.2 102.6L129.3 388.9C135.5 423.1 165.3 448 200.1 448L456 448C469.3 448 480 437.3 480 424C480 410.7 469.3 400 456 400L200.1 400C188.5 400 178.6 391.7 176.5 380.3L171.4 352L475 352C505.8 352 532.2 330.1 537.9 299.8L568.9 133.9C572.6 114.2 557.5 96 537.4 96L124.7 96L124.3 94C119.5 67.4 96.3 48 69.2 48L24 48zM208 576C234.5 576 256 554.5 256 528C256 501.5 234.5 480 208 480C181.5 480 160 501.5 160 528C160 554.5 181.5 576 208 576zM432 576C458.5 576 480 554.5 480 528C480 501.5 458.5 480 432 480C405.5 480 384 501.5 384 528C384 554.5 405.5 576 432 576z"/>
+               </svg>
+             </a>
+             <button id="mobile-toggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#faf1e6] text-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e4efe7] focus-visible:ring-offset-2" aria-expanded="false" aria-controls="mobile-menu">
+               <svg id="hamburger" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+               <svg id="close-x" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+             </button>
+           </div>
+       </div>
+
+       <div id="mobile-menu" class="md:hidden origin-top transform hidden w-full bg-white border-t border-gray-100 shadow-lg">
+             <div class="px-4 py-4 space-y-1">
+               <a href="index.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Home</a>
+               <a href="about.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Tentang Kami</a>
+               <a href="menu.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Menu</a>
+               <a href="galeri.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Galeri</a>
+               <a href="reviews.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Review</a>
+               <a href="contact.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Kontak</a>
+               <div class="px-4 py-3">
+                 <a href="../checkout.html" class="inline-flex items-center justify-center w-full px-4 py-2 rounded-full bg-[#706442] text-white text-sm font-semibold hover:opacity-90">Pesan Sekarang</a>
+               </div>
+             </div>
+       </div>
+    </header>
+    
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <h1 class="font-playfair text-4xl font-bold text-gray-900 text-center mb-4">Galeri Kami</h1>
+        <p class="text-center text-lg text-gray-600 mb-10 max-w-2xl mx-auto">Lihat lebih dekat suasana warung kami, hidangan andalan, dan tim kami yang siap melayani Anda.</p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
+            
+            <figure class="group aspect-square overflow-hidden rounded-xl shadow-lg cursor-pointer transform hover:scale-[1.02] transition duration-300 relative">
+                <img src="../../images/gallery/suasana-warung-1.jpg" alt="Suasana Warung Bubur Ayam" class="gallery-item w-full h-full object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span class="text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-full">Lihat</span>
+                </div>
+            </figure>
+
+            <figure class="group aspect-square overflow-hidden rounded-xl shadow-lg cursor-pointer transform hover:scale-[1.02] transition duration-300 relative">
+                <img src="../../images/gallery/bubur-lengkap.jpg" alt="Bubur Ayam Topping Lengkap" class="gallery-item w-full h-full object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span class="text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-full">Lihat</span>
+                </div>
+            </figure>
+            
+            <figure class="group aspect-square overflow-hidden rounded-xl shadow-lg cursor-pointer transform hover:scale-[1.02] transition duration-300 relative">
+                <img src="../../images/gallery/bubur-close-up.jpg" alt="Bubur Ayam Close-up" class="gallery-item w-full h-full object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span class="text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-full">Lihat</span>
+                </div>
+            </figure>
+
+            <figure class="group aspect-square overflow-hidden rounded-xl shadow-lg cursor-pointer transform hover:scale-[1.02] transition duration-300 relative">
+                <img src="../../images/gallery/sate-satean.jpg" alt="Aneka Sate" class="gallery-item w-full h-full object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span class="text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-full">Lihat</span>
+                </div>
+            </figure>
+            
+            <figure class="group aspect-square overflow-hidden rounded-xl shadow-lg cursor-pointer transform hover:scale-[1.02] transition duration-300 relative">
+                <img src="../../images/gallery/suasana-warung-2.jpg" alt="Suasana Warung Malam" class="gallery-item w-full h-full object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span class="text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-full">Lihat</span>
+                </div>
+            </figure>
+            
+            <figure class="group aspect-square overflow-hidden rounded-xl shadow-lg cursor-pointer transform hover:scale-[1.02] transition duration-300 relative">
+                <img src="../../images/gallery/tim.png" alt="Tim Bubur Ayam Bang Jaka" class="gallery-item w-full h-full object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span class="text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-full">Lihat</span>
+                </div>
+            </figure>
+            
+            </div>
+        </main>
+
+    <footer class="bg-[#706442] text-white py-6 mt-12">
+       <div class="max-w-7xl mx-auto px-10 sm:px-6 lg:px-8 text-center">
+         <p class="text-sm">© <span id="year"></span> Bubur Ayam Bang Jaka. Designed by Jaguar Team.</p>
+       </div>
+    </footer>
+
+    <div id="lightbox" class="fixed inset-0 hidden items-center justify-center lightbox-overlay z-50">
+       <button id="lightbox-close" class="absolute top-6 right-6 text-white text-2xl focus:outline-none">✕</button>
+       <img id="lightbox-img" src="" alt="preview" class="max-h-[80vh] max-w-[90%] rounded-lg shadow-2xl">
+    </div>
+
+    <script src="../../js/header.js"></script>
+    <script src="../../js/home.js"></script>
+
+</body>
+</html>

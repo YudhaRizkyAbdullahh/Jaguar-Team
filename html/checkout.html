@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout - Bubur Ayam Bang Jaka</title>
+  <link rel="stylesheet" href="../../src/output.css">
+</head>
+<body class="font-sans bg-white text-gray-800 leading-relaxed">
+  
+  <header class="sticky top-0 z-50 bg-white">
+    <div class="w-full shadow px-4 md:px-8 flex items-center shadow-md justify-between h-16 md:h-20">
+      <a href="tampilan/index.html" class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#faf1e6]">
+          <img src="../../images/icon/logo.png" alt="Logo Bubur Ayam Bang Jaka" class="w-7 h-7 object-cover rounded-full">
+        </span>
+        <span class="font-playfair font-bold text-lg md:text-xl text-gray-900 tracking-tight">Bubur Ayam Bang Jaka</span>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+        <a href="tampilan/index.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Home</a>
+        <a href="tampilan/about.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Tentang Kami</a>
+        <a href="tampilan/menu.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Menu</a>
+        <a href="tampilan/galeri.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Galeri</a>
+        <a href="tampilan/reviews.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Review</a>
+        <a href="tampilan/contact.html" class="text-sm font-medium text-gray-800 hover:text-[#706442] transition">Kontak</a>
+        <a href="checkout.html" class="ml-4 inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#706442] text-white text-xs md:text-sm font-semibold hover:opacity-90 transition">Pesan Sekarang</a>
+      </nav>
+
+      <div class="flex items-center md:hidden gap-3">
+        <a href="tampilan/menu.html" class="inline-flex items-center relative"></a>
+        <button id="mobile-toggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#faf1e6] text-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e4efe7] focus-visible:ring-offset-2" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="hamburger" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="close-x" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+    
+    <div id="mobile-menu" class="md:hidden origin-top transform hidden w-full bg-white border-t border-gray-100 shadow-lg">
+      <div class="px-4 py-4 space-y-1">
+        <a href="tampilan/index.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Home</a>
+        <a href="tampilan/about.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Tentang Kami</a>
+        <a href="tampilan/menu.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Menu</a>
+        <a href="tampilan/index.html#galeri" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Galeri</a>
+        <a href="tampilan/reviews.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Review</a>
+        <a href="tampilan/contact.html" class="block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:bg-[#fdfaf6]">Kontak</a>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="container mx-auto px-6 lg:px-8 pt-10 md:pt-14 pb-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-2xl md:text-3xl font-playfair font-bold mb-6 mt-8 md:mt-10">Checkout & Pesan</h1>
+
+      <p class="mb-6 text-sm text-gray-600">Isi formulir pesanan di bawah. Setelah menekan tombol "Kirim ke WhatsApp", pesan akan dikirim ke admin dan Anda dapat melanjutkan percakapan di WhatsApp untuk konfirmasi.</p>
+
+      <form id="checkout-form" class="bg-white rounded-2xl shadow-md p-6 space-y-4" novalidate>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700">Nama Pemesan</label>
+            <input id="name" name="name" type="text" required class="mt-1 block w-full rounded-xl border border-gray-200 bg-white px-3 py-2 shadow-sm placeholder-gray-400 transition focus:outline-none focus:ring-2 focus:ring-[#e4efe7] focus:border-[#706442]" placeholder="Nama lengkap" />
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-gray-700">No. HP</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" pattern="[0-9+\- ]+" required class="mt-1 block w-full rounded-xl border border-gray-200 bg-white px-3 py-2 shadow-sm placeholder-gray-400 transition focus:outline-none focus:ring-2 focus:ring-[#e4efe7] focus:border-[#706442]" placeholder="0812345xxxx" />
+            <p id="phone-hint" class="mt-1 text-xs text-red-500 hidden" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div>
+          <label for="address" class="block text-sm font-medium text-gray-700">Alamat Pemesan</label>
+          <textarea id="address" name="address" rows="3" required class="mt-1 block w-full rounded-xl border border-gray-200 bg-white px-3 py-2 shadow-sm placeholder-gray-400 transition focus:outline-none focus:ring-2 focus:ring-[#e4efe7] focus:border-[#706442]" placeholder="Jl. Contoh No. 1, Kecamatan, Kota"></textarea>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+          <div class="md:col-span-2">
+            <label for="menuItem" class="block text-sm font-medium text-gray-700">Pilih Menu</label>
+            <select id="menuItem" name="menuItem" required class="mt-1 block w-full rounded-xl border border-gray-200 bg-white px-3 py-2 shadow-sm placeholder-gray-400 transition focus:outline-none focus:ring-2 focus:ring-[#e4efe7] focus:border-[#706442]">
+              <option value="" data-image="/images/product/market.png" data-price="">-- Pilih menu --</option>
+              <option value="Bubur Ayam" data-image="/images/product/buburAyam.png" data-price="12000">Bubur Ayam — Rp 12.000</option>
+              <option value="Sate Ati Ampela" data-image="/images/product/sateAtiAmpela.png" data-price="2000">Sate Ati Ampela — Rp 2.000</option>
+              <option value="Telur Asin" data-image="/images/product/telurAsin.png" data-price="16000">Telur Asin — Rp 16.000</option>
+              <option value="Sate Telur Puyuh" data-image="/images/product/sateTelurPuyuh.jpg" data-price="2000">Sate Telur Puyuh — Rp 2.000</option>
+            </select>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="shrink-0">
+              <div class="w-16 h-16 bg-gray-100 rounded overflow-hidden flex items-center justify-center menu-preview-wrapper">
+                <img id="menu-preview" loading="lazy" src="../../images/product/buburAyam.png" alt="preview" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="flex-1">
+              <p class="text-sm text-gray-600">Harga:</p>
+              <p id="menu-price" class="font-semibold">-</p>
+
+              <div class="mt-2">
+                <button type="button" id="add-to-cart" class="inline-flex items-center gap-2 bg-[#e4efe7] text-[#064420] px-3 py-1 rounded-md font-semibold">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 bg-gray-50 rounded-lg p-4" aria-live="polite">
+          <h3 class="text-sm font-medium mb-3">Keranjang</h3>
+          <div id="cart-list" class="space-y-3">
+            <p id="cart-empty" class="text-sm text-gray-500">Keranjang kosong. Tambahkan menu terlebih dahulu.</p>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-sm text-gray-700">Total</div>
+            <div id="cart-total" class="text-lg font-semibold">Rp 0</div>
+          </div>
+        </div>
+
+        <div id="toast" class="fixed bottom-6 right-6 z-50 hidden" role="status" aria-live="polite">
+          <div id="toast-msg" class="bg-[#064420] text-white px-4 py-2 rounded-lg shadow-lg transform transition-all duration-300">Ditambahkan ke keranjang</div>
+        </div>
+
+        <div>
+          <label for="notes" class="block text-sm font-medium text-gray-700">Catatan (opsional)</label>
+          <input id="notes" name="notes" type="text" class="mt-1 block w-full rounded-xl border border-gray-200 bg-white px-3 py-2 shadow-sm placeholder-gray-400 transition focus:outline-none focus:ring-2 focus:ring-[#e4efe7] focus:border-[#706442]" placeholder="Contoh: Tidak pakai bawang goreng" />
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div class="text-sm text-gray-600">Pastikan nomor WhatsApp aktif untuk konfirmasi.</div>
+          <button id="submit-btn" type="submit" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#706442] text-white font-semibold hover:opacity-95 transition disabled:opacity-60">
+            <svg id="submit-spinner" class="hidden animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>
+            <span id="submit-label">Kirim ke WhatsApp</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="bg-[#706442] text-white py-6">
+    <div class="max-w-7xl mx-auto px-10 sm:px-6 lg:px-8 text-center">
+      <p class="text-sm">© <span id="year"></span> Bubur Ayam Bang Jaka. Designed by Jaguar Team.</p>
+    </div>
+  </footer>
+<script src="../js/dashboard.js"></script>
+  <script src="../js/header.js"></script>
+  <script src="../js/checkout.js"></script>
+  <script src="../js/db_jaguar.js"></script>
+</body>
+</html>
