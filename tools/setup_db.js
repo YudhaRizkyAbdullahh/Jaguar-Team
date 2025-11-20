@@ -16,11 +16,11 @@ async function setupDatabase() {
         const connection = await mysql.createConnection(dbConfig);
         console.log('Connected to MySQL server.');
 
-        // Create database if it doesn't exist
+        // buat database jika belum tersedia
         await connection.query('CREATE DATABASE IF NOT EXISTS db_jaguar');
         console.log('Database db_jaguar created or already exists.');
 
-        // Switch to the database
+        // pindah ke database
         await connection.changeUser({ database: 'db_jaguar' });
 
         // Read SQL file
